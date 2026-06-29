@@ -1,104 +1,546 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sumit Kumar Saxena | Full Stack Engineer</title>
-    <!-- Tailwind CSS CDN for modern styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Alex Chen | Full Stack Engineer</title>
+    <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        darkbg: '#0d1117',
-                        cardbg: '#161b22',
-                        accent: '#238636'
+                        slate: {
+                            850: '#1a1f2e',
+                            950: '#0d1117'
+                        }
                     }
                 }
             }
         }
     </script>
+    <link rel="stylesheet" href="[cdnjs.cloudflare.com](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css)">
+    <style>
+        @import url('[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap)');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.15);
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
 </head>
-<body class="bg-darkbg text-gray-200 font-sans min-h-screen flex flex-col justify-between">
+<body class="bg-slate-950 text-gray-100 antialiased">
 
-    <!-- Header / Navbar -->
-    <header class="border-b border-gray-800 bg-cardbg sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-white tracking-wide">Sumit Kumar Saxena</h1>
-            <nav class="space-x-6 text-sm font-medium text-gray-400">
-                <a href="#about" class="hover:text-white transition">About</a>
-                <a href="#skills" class="hover:text-white transition">Skills</a>
-                <a href="#projects" class="hover:text-white transition">Projects</a>
-            </nav>
-        </div>
-    </header>
+    <header class="fixed top-0 left-0 right-0 z-50 nav-blur bg-slate-950/80 border-b border-slate-800/50">
+        <nav class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-xl font-bold tracking-tight">
+                    <span class="text-white">Alex</span><span class="text-emerald-400">.</span><span class="text-gray-400">dev</span>
+                </a>
+                
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-400 hover:text-white transition-colors">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
 
-    <!-- Main Content -->
-    <main class="max-w-3xl mx-auto px-4 py-12 space-y-16 flex-grow">
-        
-        <!-- Hero Section -->
-        <section id="about" class="space-y-4 text-center md:text-left">
-            <h2 class="text-4xl font-extrabold text-white tracking-tight">Full Stack Engineer</h2>
-            <p class="text-emerald-500 font-semibold text-lg">.NET & Modern Web Architect</p>
-            <p class="text-gray-400 leading-relaxed text-base max-w-2xl">
-                Passionate and system-oriented Full Stack Developer specializing in building robust backends, scalable relational database architectures, and clean, responsive user interfaces. I bridge the gap between complex enterprise logic and modern web experiences.
-            </p>
-        </section>
-
-        <hr class="border-gray-800">
-
-        <!-- Skills Section -->
-        <section id="skills" class="space-y-6">
-            <h3 class="text-2xl font-bold text-white">Technical Expertise</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="bg-cardbg p-4 rounded-lg border border-gray-800">
-                    <h4 class="text-emerald-400 font-semibold mb-2">Backend & APIs</h4>
-                    <p class="text-gray-400 text-sm">C# .NET, ASP.NET Core, Minimal APIs, WebForms, Architecture Patterns</p>
-                </div>
-                <div class="bg-cardbg p-4 rounded-lg border border-gray-800">
-                    <h4 class="text-emerald-400 font-semibold mb-2">Frontend & UI</h4>
-                    <p class="text-gray-400 text-sm">React, JavaScript (ES6+), Tailwind CSS, Responsive Web Design</p>
-                </div>
-                <div class="bg-cardbg p-4 rounded-lg border border-gray-800">
-                    <h4 class="text-emerald-400 font-semibold mb-2">Databases</h4>
-                    <p class="text-gray-400 text-sm">SQL Server, SQLite, Relational Schema Design, Query Optimization</p>
-                </div>
-                <div class="bg-cardbg p-4 rounded-lg border border-gray-800">
-                    <h4 class="text-emerald-400 font-semibold mb-2">Tools & DevOps</h4>
-                    <p class="text-gray-400 text-sm">Git, Version Control, GitHub Actions, Postman API Testing</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="border-gray-800">
-
-        <!-- Projects Section -->
-        <section id="projects" class="space-y-6">
-            <h3 class="text-2xl font-bold text-white">Featured Project</h3>
-            <div class="bg-cardbg p-6 rounded-xl border border-emerald-800/40 space-y-4 shadow-lg">
-                <div class="flex justify-between items-start flex-wrap gap-2">
-                    <h4 class="text-xl font-bold text-white">AI-Powered Invoice & Receipt Dashboard</h4>
-                    <span class="bg-emerald-950 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-medium border border-emerald-800">In Development</span>
-                </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    An enterprise-grade automation system that replaces manual data entry by extracting unstructured invoice images into verified, relational database structures.
-                </p>
-                <ul class="text-xs text-gray-400 space-y-1 list-disc list-inside">
-                    <li>Secure Multipart Form API for image ingestion.</li>
-                    <li>Deterministic AI transformation layer enforcing strict JSON schemas.</li>
-                    <li>Relational database synchronization preventing orphan data.</li>
-                    <li>Mobile-first, responsive data review grid using Tailwind CSS.</li>
+                <ul class="hidden md:flex items-center gap-8">
+                    <li><a href="#about" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">About</a></li>
+                    <li><a href="#skills" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">Skills</a></li>
+                    <li><a href="#projects" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">Projects</a></li>
+                    <li><a href="#contact" class="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200">Contact</a></li>
+                    <li>
+                        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-900 bg-emerald-400 rounded-lg hover:bg-emerald-300 transition-colors duration-200">
+                            <span>Let's Talk</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
+
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-800 pt-4">
+                <ul class="flex flex-col gap-4">
+                    <li><a href="#about" class="block text-sm font-medium text-gray-400 hover:text-white transition-colors">About</a></li>
+                    <li><a href="#skills" class="block text-sm font-medium text-gray-400 hover:text-white transition-colors">Skills</a></li>
+                    <li><a href="#projects" class="block text-sm font-medium text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                    <li><a href="#contact" class="block text-sm font-medium text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    <li class="pt-2">
+                        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-slate-900 bg-emerald-400 rounded-lg hover:bg-emerald-300 transition-colors">
+                            <span>Let's Talk</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="min-h-screen flex items-center pt-20">
+            <div class="max-w-6xl mx-auto px-6 py-20 lg:py-32">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-400/10 border border-emerald-400/20 rounded-full mb-6">
+                            <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                            <span class="text-xs font-medium text-emerald-400 tracking-wide uppercase">Available for opportunities</span>
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
+                            <span class="text-white">Hi, I'm Alex Chen</span>
+                        </h1>
+                        
+                        <p class="text-xl sm:text-2xl font-medium text-gray-300 mb-4 leading-relaxed">
+                            <span class="gradient-text">Full Stack Engineer</span>
+                        </p>
+                        
+                        <p class="text-lg text-gray-400 mb-8 leading-relaxed max-w-xl">
+                            .NET &amp; Modern Web Architect with 8+ years building scalable enterprise solutions. I transform complex business requirements into elegant, performant applications.
+                        </p>
+
+                        <div class="flex flex-wrap gap-4 mb-10">
+                            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-900 bg-emerald-400 rounded-lg hover:bg-emerald-300 transition-all duration-200 hover:shadow-lg hover:shadow-emerald-400/20">
+                                <span>View My Work</span>
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                            </a>
+                            <a href="[github.com](https://github.com)" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-slate-800 border border-slate-700 rounded-lg hover:bg-slate-700 hover:border-slate-600 transition-all duration-200">
+                                <i class="fa-brands fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                        </div>
+
+                        <div class="flex items-center gap-8 pt-8 border-t border-slate-800">
+                            <div>
+                                <p class="text-3xl font-bold text-white">8+</p>
+                                <p class="text-sm text-gray-500 font-medium">Years Experience</p>
+                            </div>
+                            <div class="w-px h-12 bg-slate-800"></div>
+                            <div>
+                                <p class="text-3xl font-bold text-white">50+</p>
+                                <p class="text-sm text-gray-500 font-medium">Projects Delivered</p>
+                            </div>
+                            <div class="w-px h-12 bg-slate-800"></div>
+                            <div>
+                                <p class="text-3xl font-bold text-white">99%</p>
+                                <p class="text-sm text-gray-500 font-medium">Client Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+                        <div class="relative">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-emerald-400/20 to-blue-500/20 rounded-full blur-3xl"></div>
+                            <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-br from-emerald-400 to-blue-500 p-1">
+                                <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center">
+                                    <div class="text-center">
+                                        <i class="fa-solid fa-code text-5xl sm:text-6xl text-emerald-400 mb-3"></i>
+                                        <p class="text-sm font-medium text-gray-400">Clean Code Advocate</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-slate-800 border border-slate-700 rounded-2xl flex items-center justify-center shadow-xl">
+                                <i class="fa-brands fa-microsoft text-3xl text-blue-400"></i>
+                            </div>
+                            <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-slate-800 border border-slate-700 rounded-2xl flex items-center justify-center shadow-xl">
+                                <i class="fa-brands fa-react text-3xl text-cyan-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <section id="skills" class="py-20 lg:py-32 bg-slate-900/50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <p class="text-sm font-semibold text-emerald-400 tracking-widest uppercase mb-3">Technical Expertise</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">Skills &amp; Technologies</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">A comprehensive toolkit refined over years of building production systems at scale.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 hover:border-emerald-400/30 transition-all duration-300 card-glow">
+                        <div class="w-12 h-12 bg-emerald-400/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fa-solid fa-server text-xl text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-4">Backend</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">C# / .NET 8</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">ASP.NET Core</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Entity Framework</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Node.js / Express</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">RESTful APIs</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">GraphQL</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 hover:border-blue-400/30 transition-all duration-300 card-glow">
+                        <div class="w-12 h-12 bg-blue-400/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fa-solid fa-palette text-xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-4">Frontend</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">React / Next.js</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">TypeScript</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Tailwind CSS</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Angular</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Blazor WebAssembly</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-blue-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Redux / Zustand</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 hover:border-purple-400/30 transition-all duration-300 card-glow">
+                        <div class="w-12 h-12 bg-purple-400/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fa-solid fa-database text-xl text-purple-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-4">Databases</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">SQL Server</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">PostgreSQL</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">MongoDB</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Redis</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Elasticsearch</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-purple-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">CosmosDB</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 hover:border-orange-400/30 transition-all duration-300 card-glow">
+                        <div class="w-12 h-12 bg-orange-400/10 rounded-xl flex items-center justify-center mb-5">
+                            <i class="fa-solid fa-toolbox text-xl text-orange-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-4">DevOps &amp; Tools</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Azure / AWS</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Docker / Kubernetes</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">CI/CD Pipelines</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Git / GitHub Actions</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Terraform</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <span class="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                                <span class="text-sm text-gray-300">Datadog / Grafana</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 lg:py-32">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <p class="text-sm font-semibold text-emerald-400 tracking-widest uppercase mb-3">Portfolio</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">Featured Project</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">Showcasing enterprise-grade solutions that solve real business problems.</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 rounded-3xl overflow-hidden card-glow transition-all duration-500">
+                    <div class="grid lg:grid-cols-2">
+                        <div class="p-8 lg:p-12 order-2 lg:order-1">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span class="px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-400/10 rounded-full">Enterprise</span>
+                                <span class="px-3 py-1 text-xs font-semibold text-blue-400 bg-blue-400/10 rounded-full">AI/ML</span>
+                                <span class="px-3 py-1 text-xs font-semibold text-purple-400 bg-purple-400/10 rounded-full">SaaS</span>
+                            </div>
+                            
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4 leading-tight">AI-Powered Invoice &amp; Receipt Processing Dashboard</h3>
+                            
+                            <p class="text-gray-400 leading-relaxed mb-8">A comprehensive enterprise solution that leverages Azure AI Document Intelligence to automate invoice processing, extract key data points, and provide real-time analytics for financial operations teams.</p>
+
+                            <div class="mb-8">
+                                <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">Architecture Highlights</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 bg-emerald-400/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <i class="fa-solid fa-check text-xs text-emerald-400"></i>
+                                        </div>
+                                        <span class="text-sm text-gray-300 leading-relaxed">Microservices architecture on Azure Kubernetes Service with auto-scaling</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 bg-emerald-400/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <i class="fa-solid fa-check text-xs text-emerald-400"></i>
+                                        </div>
+                                        <span class="text-sm text-gray-300 leading-relaxed">Event-driven processing with Azure Service Bus handling 10K+ documents/hour</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 bg-emerald-400/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <i class="fa-solid fa-check text-xs text-emerald-400"></i>
+                                        </div>
+                                        <span class="text-sm text-gray-300 leading-relaxed">Custom ML models achieving 98.5% extraction accuracy on diverse formats</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 bg-emerald-400/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <i class="fa-solid fa-check text-xs text-emerald-400"></i>
+                                        </div>
+                                        <span class="text-sm text-gray-300 leading-relaxed">Real-time dashboard with React, SignalR, and D3.js visualizations</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <div class="w-6 h-6 bg-emerald-400/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+                                            <i class="fa-solid fa-check text-xs text-emerald-400"></i>
+                                        </div>
+                                        <span class="text-sm text-gray-300 leading-relaxed">RBAC with Azure AD B2C, audit logging, and SOC 2 compliance</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1.5 text-xs font-medium text-gray-300 bg-slate-700/50 border border-slate-600/50 rounded-lg">.NET 8</span>
+                                <span class="px-3 py-1.5 text-xs font-medium text-gray-300 bg-slate-700/50 border border-slate-600/50 rounded-lg">React</span>
+                                <span class="px-3 py-1.5 text-xs font-medium text-gray-300 bg-slate-700/50 border border-slate-600/50 rounded-lg">Azure AI</span>
+                                <span class="px-3 py-1.5 text-xs font-medium text-gray-300 bg-slate-700/50 border border-slate-600/50 rounded-lg">Kubernetes</span>
+                                <span class="px-3 py-1.5 text-xs font-medium text-gray-300 bg-slate-700/50 border border-slate-600/50 rounded-lg">PostgreSQL</span>
+                                <span class="px-3 py-1.5 text-xs font-medium text-gray-300 bg-slate-700/50 border border-slate-600/50 rounded-lg">Redis</span>
+                            </div>
+
+                            <div class="flex flex-wrap gap-4">
+                                <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-slate-900 bg-emerald-400 rounded-lg hover:bg-emerald-300 transition-colors">
+                                    <span>View Case Study</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                                <a href="#" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-slate-700 border border-slate-600 rounded-lg hover:bg-slate-600 transition-colors">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>Source Code</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="order-1 lg:order-2 bg-gradient-to-br from-slate-700/30 to-slate-800/30 p-8 lg:p-12 flex items-center justify-center min-h-[300px] lg:min-h-[500px]">
+                            <div class="relative w-full max-w-md">
+                                <div class="absolute inset-0 bg-gradient-to-r from-emerald-400/10 to-blue-500/10 rounded-2xl blur-2xl"></div>
+                                <div class="relative bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl overflow-hidden">
+                                    <div class="bg-slate-800 px-4 py-3 flex items-center gap-2 border-b border-slate-700">
+                                        <div class="flex gap-1.5">
+                                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                        </div>
+                                        <div class="flex-1 text-center">
+                                            <span class="text-xs text-gray-500">invoice-processor.azurewebsites.net</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-6">
+                                        <div class="flex items-center justify-between mb-6">
+                                            <div>
+                                                <p class="text-xs text-gray-500 mb-1">Processed Today</p>
+                                                <p class="text-2xl font-bold text-white">2,847</p>
+                                            </div>
+                                            <div class="w-12 h-12 bg-emerald-400/10 rounded-xl flex items-center justify-center">
+                                                <i class="fa-solid fa-file-invoice text-emerald-400"></i>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-3 mb-6">
+                                            <div class="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-8 h-8 bg-blue-400/10 rounded-lg flex items-center justify-center">
+                                                        <i class="fa-solid fa-file-pdf text-sm text-blue-400"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="text-sm text-white">INV-2024-0892.pdf</p>
+                                                        <p class="text-xs text-gray-500">Processed 2m ago</p>
+                                                    </div>
+                                                </div>
+                                                <span class="px-2 py-1 text-xs font-medium text-emerald-400 bg-emerald-400/10 rounded">Complete</span>
+                                            </div>
+                                            <div class="flex items-center justify-between p-3 bg-slate-800/50 rounded-lg">
+                                                <div class="flex items-center gap-3">
+                                                    <div class="w-8 h-8 bg-purple-400/10 rounded-lg flex items-center justify-center">
+                                                        <i class="fa-solid fa-file-image text-sm text-purple-400"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="text-sm text-white">receipt_scan.jpg</p>
+                                                        <p class="text-xs text-gray-500">Processing...</p>
+                                                    </div>
+                                                </div>
+                                                <span class="px-2 py-1 text-xs font-medium text-yellow-400 bg-yellow-400/10 rounded">In Progress</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between text-sm">
+                                            <span class="text-gray-500">Accuracy Rate</span>
+                                            <span class="text-emerald-400 font-semibold">98.5%</span>
+                                        </div>
+                                        <div class="mt-2 h-2 bg-slate-800 rounded-full overflow-hidden">
+                                            <div class="h-full w-[98.5%] bg-gradient-to-r from-emerald-400 to-emerald-500 rounded-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 lg:py-32 bg-slate-900/50">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <p class="text-sm font-semibold text-emerald-400 tracking-widest uppercase mb-3">Get in Touch</p>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">Let's Build Something Great</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto leading-relaxed">Currently open to full-time opportunities, consulting engagements, and interesting collaborations.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                    <a href="mailto:alex@example.com" class="group bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 text-center hover:border-emerald-400/30 transition-all duration-300 card-glow">
+                        <div class="w-14 h-14 bg-emerald-400/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-emerald-400/20 transition-colors">
+                            <i class="fa-solid fa-envelope text-xl text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">Email</h3>
+                        <p class="text-sm text-gray-400">alex@example.com</p>
+                    </a>
+
+                    <a href="[linkedin.com](https://linkedin.com)" target="_blank" rel="noopener noreferrer" class="group bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 text-center hover:border-blue-400/30 transition-all duration-300 card-glow">
+                        <div class="w-14 h-14 bg-blue-400/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-400/20 transition-colors">
+                            <i class="fa-brands fa-linkedin-in text-xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">LinkedIn</h3>
+                        <p class="text-sm text-gray-400">Connect with me</p>
+                    </a>
+
+                    <a href="[github.com](https://github.com)" target="_blank" rel="noopener noreferrer" class="group bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 text-center hover:border-purple-400/30 transition-all duration-300 card-glow">
+                        <div class="w-14 h-14 bg-purple-400/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-400/20 transition-colors">
+                            <i class="fa-brands fa-github text-xl text-purple-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white mb-2">GitHub</h3>
+                        <p class="text-sm text-gray-400">View my code</p>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-gray-800 bg-cardbg py-6 mt-12 text-center text-xs text-gray-500">
-        <p>© 2026 Sumit Kumar Saxena. Built with Tailwind CSS & GitHub Pages.</p>
+    <footer class="border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 py-12">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-xl font-bold tracking-tight">
+                        <span class="text-white">Alex</span><span class="text-emerald-400">.</span><span class="text-gray-400">dev</span>
+                    </a>
+                    <span class="hidden md:block w-px h-6 bg-slate-800"></span>
+                    <p class="text-sm text-gray-500">Building the future, one commit at a time.</p>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="[github.com](https://github.com)" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-800 border border-slate-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-slate-600 transition-colors">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="[linkedin.com](https://linkedin.com)" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-800 border border-slate-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-slate-600 transition-colors">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="[twitter.com](https://twitter.com)" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-slate-800 border border-slate-700 rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:border-slate-600 transition-colors">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-500">&copy; 2024 Alex Chen. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-gray-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    </script>
 </body>
 </html>
